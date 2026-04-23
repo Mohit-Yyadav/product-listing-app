@@ -1026,42 +1026,6 @@
     "createdAt": "2026-04-18T14:25:00.000Z"
   },
   {
-    "id": "18c445b9-9bbe-4bb2-a838-a65d8ab5b48b",
-    "name": "helloo helloo",
-    "description": "f",
-    "price": 1254,
-    "discountPrice": 12,
-    "category": "electronics",
-    "brand": "Apple",
-    "rating": 4.5,
-    "stock": 25,
-    "thumbnail": null,
-    "images": [],
-    "variants": {
-      "color": [],
-      "storage": []
-    },
-    "createdAt": "2026-04-18T18:57:23.285Z"
-  },
-  {
-    "id": "33da0911-3539-4488-9303-53e1d2f6922b",
-    "name": "helloo helloo",
-    "description": "f",
-    "price": 1254,
-    "discountPrice": 12,
-    "category": "electronics",
-    "brand": "Apple",
-    "rating": 4.5,
-    "stock": 25,
-    "thumbnail": null,
-    "images": [],
-    "variants": {
-      "color": [],
-      "storage": []
-    },
-    "createdAt": "2026-04-18T18:59:04.943Z"
-  },
-  {
     "id": "397d9b5a-f6c1-43e1-870b-29351debee77",
     "name": "iPhone 18 Pro",
     "description": "fff",

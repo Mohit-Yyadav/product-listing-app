@@ -36,13 +36,17 @@ const ProductCard = ({ product, viewMode, onEdit, onDelete, onQuickView, onAddTo
     : 0;
   
   // Handle image URL
-  const getImageUrl = (imagePath) => {
-    if (!imagePath) return null;
-    if (imagePath.startsWith('http')) return imagePath;
-    if (imagePath.startsWith('/uploads/')) return `http://localhost:5000${imagePath}`;
-    if (imagePath.startsWith('uploads/')) return `http://localhost:5000/${imagePath}`;
-    return `http://localhost:5000/uploads/${imagePath}`;
-  };
+  const BASE_URL = import.meta.env.VITE_API_URL;
+
+const getImageUrl = (imagePath) => {
+  if (!imagePath) return null;
+  if (imagePath.startsWith('http')) return imagePath;
+
+  if (imagePath.startsWith('/uploads/')) return `${BASE_URL}${imagePath}`;
+  if (imagePath.startsWith('uploads/')) return `${BASE_URL}/${imagePath}`;
+
+  return `${BASE_URL}/uploads/${imagePath}`;
+};
   
   const currentImageUrl = !imageError && allImages[currentImageIndex]
     ? getImageUrl(allImages[currentImageIndex])

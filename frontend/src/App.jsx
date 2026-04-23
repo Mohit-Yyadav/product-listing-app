@@ -33,7 +33,7 @@ const App = () => {
     sortOrder: "desc"
   });
 
-  const API_BASE_URL = "http://localhost:5000/api";
+  const API_BASE_URL = import.meta.env.VITE_API_URL;
 
   // Fetch products from backend API with all filters
   const fetchProducts = useCallback(async () => {
@@ -56,7 +56,7 @@ const App = () => {
       params.append("page", currentPage);
       params.append("limit", productsPerPage);
       
-      const url = `${API_BASE_URL}/products${params.toString() ? `?${params.toString()}` : ""}`;
+      const url = `${API_BASE_URL}/api/products${params.toString() ? `?${params.toString()}` : ""}`;
       
       const response = await fetch(url);
       
@@ -132,7 +132,7 @@ const App = () => {
         });
       }
       
-      const response = await fetch(`${API_BASE_URL}/products`, {
+      const response = await fetch(`${API_BASE_URL}/api/products`, {
         method: "POST",
         body: formData,
       });
@@ -196,7 +196,7 @@ const App = () => {
         });
       }
       
-      const response = await fetch(`${API_BASE_URL}/products/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/products/${id}`, {
         method: "PUT",
         body: formData,
       });
@@ -234,7 +234,7 @@ const App = () => {
     try {
       setLoading(true);
       
-      const response = await fetch(`${API_BASE_URL}/products/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/products/${id}`, {
         method: "DELETE",
       });
       
@@ -329,7 +329,7 @@ const App = () => {
               <div className="spinner"></div>
               <p>Loading products from backend API...</p>
               <p style={{ fontSize: "12px", color: "#666", marginTop: "10px" }}>
-                GET {API_BASE_URL}/products
+                GET {API_BASE_URL}/api/products
               </p>
             </div>
           ) : error ? (
