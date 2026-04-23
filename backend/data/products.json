@@ -1,0 +1,1112 @@
+[
+  {
+    "id": 1776019588887,
+    "name": "iPhone 14 Pro",
+    "description": "Apple iPhone 14 Pro (128GB) - Deep Purple",
+    "price": 129999,
+    "discountPrice": 119999,
+    "category": "electronics",
+    "brand": "Apple",
+    "rating": 4.8,
+    "stock": 25,
+    "thumbnail": "/uploads/1776019588736.png",
+    "images": [
+      "/uploads/1776019588779.jpg",
+      "/uploads/1776019588820.jpg",
+      "/uploads/1776019588838.jpg",
+      "/uploads/1776019588876.jpg"
+    ],
+    "variants": {
+      "color": [],
+      "storage": []
+    },
+    "createdAt": "2026-04-12T18:46:28.887Z"
+  },
+  {
+    "id": 1776108328084,
+    "name": "HP Pavilion Laptop",
+    "description": "HP Pavilion 15, Intel i5, 16GB RAM, 512GB SSD",
+    "price": 65000,
+    "discountPrice": 59999,
+    "category": "electronics",
+    "brand": "HP",
+    "rating": 4.5,
+    "stock": 20,
+    "thumbnail": "/uploads/1776484903317.jpg",
+    "images": [
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903334.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Gold",
+        "black"
+      ],
+      "storage": [
+        "128GB",
+        "256GB",
+        "512GB"
+      ]
+    },
+    "createdAt": "2026-04-13T19:25:28.084Z",
+    "updatedAt": "2026-04-18T04:17:03.719Z"
+  },
+  {
+    "id": "3f925d3a-9edb-4e7c-9073-788ae6fabeac",
+    "name": "Nokia",
+    "description": "Apple iPhone 14 Pro (128GB) - Deep Purple",
+    "price": 129999,
+    "discountPrice": 119999,
+    "category": "electronics",
+    "brand": "Apple",
+    "rating": 4.8,
+    "stock": 25,
+    "thumbnail": "/uploads/1776511783638.png",
+    "images": [
+      "/uploads/1776511783688.jpg",
+      "/uploads/1776511783725.jpg",
+      "/uploads/1776511783760.jpg",
+      "/uploads/1776511783776.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Deep Purple",
+        "Gold",
+        "Siilver"
+      ],
+      "storage": [
+        "128GB",
+        "256GB",
+        "512GB"
+      ]
+    },
+    "createdAt": "2026-04-18T11:29:43.798Z"
+  },
+  {
+    "id": 1776019588881,
+    "name": "iPhone 14 Pro",
+    "description": "Apple iPhone 14 Pro (128GB) - Deep Purple",
+    "price": 129999,
+    "discountPrice": 119999,
+    "category": "electronics",
+    "brand": "Apple",
+    "rating": 4.8,
+    "stock": 25,
+    "thumbnail": "/uploads/1776019588736.png",
+    "images": [
+      "/uploads/1776019588779.jpg",
+      "/uploads/1776019588820.jpg",
+      "/uploads/1776019588838.jpg",
+      "/uploads/1776019588876.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Deep Purple",
+        "Gold",
+        "Silver"
+      ],
+      "storage": [
+        "128GB",
+        "256GB",
+        "512GB"
+      ]
+    },
+    "createdAt": "2026-04-12T18:46:28.887Z"
+  },
+  {
+    "id": 1776108328083,
+    "name": "HP Pavilion Laptop",
+    "description": "HP Pavilion 15, Intel i5, 16GB RAM, 512GB SSD",
+    "price": 65000,
+    "discountPrice": 59999,
+    "category": "electronics",
+    "brand": "HP",
+    "rating": 4.5,
+    "stock": 20,
+    "thumbnail": "/uploads/1776484903317.jpg",
+    "images": [
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903334.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Gold",
+        "Black"
+      ],
+      "storage": [
+        "128GB",
+        "256GB",
+        "512GB"
+      ]
+    },
+    "createdAt": "2026-04-13T19:25:28.084Z"
+  },
+  {
+    "id": "5bd57a58-c120-41b1-acb0-38bd18b968fb",
+    "name": "Samsung Galaxy S23 Ultra",
+    "description": "Samsung Galaxy S23 Ultra 5G (256GB) - Phantom Black",
+    "price": 124999,
+    "discountPrice": 114999,
+    "category": "electronics",
+    "brand": "Samsung",
+    "rating": 4.7,
+    "stock": 30,
+    "thumbnail": "/uploads/1776486259779.png",
+    "images": [
+      "/uploads/1776486259823.jpg",
+      "/uploads/1776486259856.jpg",
+      "/uploads/1776486259911.jpg",
+      "/uploads/1776486259928.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Phantom Black",
+        "Green",
+        "Cream"
+      ],
+      "storage": [
+        "256GB",
+        "512GB",
+        "1TB"
+      ]
+    },
+    "createdAt": "2026-04-18T04:24:19.964Z"
+  },
+  {
+    "id": "3f925d3a-9edb-4e7c-9073-788ae6fabeab",
+    "name": "OnePlus 11",
+    "description": "OnePlus 11 5G (128GB) - Titan Black",
+    "price": 56999,
+    "discountPrice": 52999,
+    "category": "electronics",
+    "brand": "OnePlus",
+    "rating": 4.6,
+    "stock": 40,
+    "thumbnail": "/uploads/1776511783638.png",
+    "images": [
+      "/uploads/1776511783688.jpg",
+      "/uploads/1776511783725.jpg",
+      "/uploads/1776511783760.jpg",
+      "/uploads/1776511783776.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Titan Black",
+        "Eternal Green"
+      ],
+      "storage": [
+        "128GB",
+        "256GB"
+      ]
+    },
+    "createdAt": "2026-04-18T11:29:43.798Z"
+  },
+  {
+    "id": 1776512000001,
+    "name": "Google Pixel 7 Pro",
+    "description": "Google Pixel 7 Pro (128GB) - Snow White",
+    "price": 84999,
+    "discountPrice": 79999,
+    "category": "electronics",
+    "brand": "Google",
+    "rating": 4.6,
+    "stock": 35,
+    "thumbnail": "/uploads/1776019588736.png",
+    "images": [
+      "/uploads/1776019588779.jpg",
+      "/uploads/1776019588820.jpg",
+      "/uploads/1776019588838.jpg",
+      "/uploads/1776019588876.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Snow White",
+        "Obsidian",
+        "Hazel"
+      ],
+      "storage": [
+        "128GB",
+        "256GB"
+      ]
+    },
+    "createdAt": "2026-04-18T12:00:00.000Z"
+  },
+  {
+    "id": 1776512000002,
+    "name": "Xiaomi 12 Pro",
+    "description": "Xiaomi 12 Pro (256GB) - Blue",
+    "price": 66999,
+    "discountPrice": 61999,
+    "category": "electronics",
+    "brand": "Xiaomi",
+    "rating": 4.4,
+    "stock": 28,
+    "thumbnail": "/uploads/1776484903317.jpg",
+    "images": [
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903334.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Blue",
+        "Black",
+        "Purple"
+      ],
+      "storage": [
+        "128GB",
+        "256GB"
+      ]
+    },
+    "createdAt": "2026-04-18T12:05:00.000Z"
+  },
+  {
+    "id": 1776512000003,
+    "name": "MacBook Pro M2",
+    "description": "Apple MacBook Pro M2 (512GB SSD) - Space Gray",
+    "price": 189999,
+    "discountPrice": 174999,
+    "category": "electronics",
+    "brand": "Apple",
+    "rating": 4.9,
+    "stock": 15,
+    "thumbnail": "/uploads/1776486259779.png",
+    "images": [
+      "/uploads/1776486259823.jpg",
+      "/uploads/1776486259856.jpg",
+      "/uploads/1776486259911.jpg",
+      "/uploads/1776486259928.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Space Gray",
+        "Silver"
+      ],
+      "storage": [
+        "512GB",
+        "1TB"
+      ]
+    },
+    "createdAt": "2026-04-18T12:10:00.000Z"
+  },
+  {
+    "id": 1776512000004,
+    "name": "Dell XPS 15",
+    "description": "Dell XPS 15, Intel i7, 32GB RAM, 1TB SSD",
+    "price": 159999,
+    "discountPrice": 149999,
+    "category": "electronics",
+    "brand": "Dell",
+    "rating": 4.7,
+    "stock": 18,
+    "thumbnail": "/uploads/1776511783638.png",
+    "images": [
+      "/uploads/1776511783688.jpg",
+      "/uploads/1776511783725.jpg",
+      "/uploads/1776511783760.jpg",
+      "/uploads/1776511783776.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Platinum Silver",
+        "Black"
+      ],
+      "storage": [
+        "512GB",
+        "1TB",
+        "2TB"
+      ]
+    },
+    "createdAt": "2026-04-18T12:15:00.000Z"
+  },
+  {
+    "id": 1776512000005,
+    "name": "Sony WH-1000XM5",
+    "description": "Sony WH-1000XM5 Wireless Noise Cancelling Headphones",
+    "price": 29999,
+    "discountPrice": 27999,
+    "category": "electronics",
+    "brand": "Sony",
+    "rating": 4.8,
+    "stock": 50,
+    "thumbnail": "/uploads/1776019588736.png",
+    "images": [
+      "/uploads/1776019588779.jpg",
+      "/uploads/1776019588820.jpg",
+      "/uploads/1776019588838.jpg",
+      "/uploads/1776019588876.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black",
+        "Silver",
+        "Blue"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T12:20:00.000Z"
+  },
+  {
+    "id": 1776512000006,
+    "name": "iPad Pro 12.9",
+    "description": "Apple iPad Pro 12.9-inch M2 Chip (256GB) - Space Gray",
+    "price": 119999,
+    "discountPrice": 109999,
+    "category": "electronics",
+    "brand": "Apple",
+    "rating": 4.8,
+    "stock": 22,
+    "thumbnail": "/uploads/1776484903317.jpg",
+    "images": [
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903334.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Space Gray",
+        "Silver"
+      ],
+      "storage": [
+        "128GB",
+        "256GB",
+        "512GB"
+      ]
+    },
+    "createdAt": "2026-04-18T12:25:00.000Z"
+  },
+  {
+    "id": 1776512000007,
+    "name": "Asus ROG Strix G15",
+    "description": "Asus ROG Strix G15 Gaming Laptop, Ryzen 9, RTX 3070",
+    "price": 149999,
+    "discountPrice": 139999,
+    "category": "electronics",
+    "brand": "Asus",
+    "rating": 4.6,
+    "stock": 12,
+    "thumbnail": "/uploads/1776486259779.png",
+    "images": [
+      "/uploads/1776486259823.jpg",
+      "/uploads/1776486259856.jpg",
+      "/uploads/1776486259911.jpg",
+      "/uploads/1776486259928.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black",
+        "Gray"
+      ],
+      "storage": [
+        "1TB",
+        "2TB"
+      ]
+    },
+    "createdAt": "2026-04-18T12:30:00.000Z"
+  },
+  {
+    "id": 1776512000008,
+    "name": "Nothing Phone 2",
+    "description": "Nothing Phone 2 (256GB) - White",
+    "price": 44999,
+    "discountPrice": 41999,
+    "category": "electronics",
+    "brand": "Nothing",
+    "rating": 4.5,
+    "stock": 45,
+    "thumbnail": "/uploads/1776511783638.png",
+    "images": [
+      "/uploads/1776511783688.jpg",
+      "/uploads/1776511783725.jpg",
+      "/uploads/1776511783760.jpg",
+      "/uploads/1776511783776.jpg"
+    ],
+    "variants": {
+      "color": [
+        "White",
+        "Dark Gray"
+      ],
+      "storage": [
+        "128GB",
+        "256GB"
+      ]
+    },
+    "createdAt": "2026-04-18T12:35:00.000Z"
+  },
+  {
+    "id": 1776512000009,
+    "name": "Logitech MX Master 3S",
+    "description": "Logitech MX Master 3S Wireless Mouse",
+    "price": 9999,
+    "discountPrice": 8999,
+    "category": "electronics",
+    "brand": "Logitech",
+    "rating": 4.7,
+    "stock": 60,
+    "thumbnail": "/uploads/1776019588736.png",
+    "images": [
+      "/uploads/1776019588779.jpg",
+      "/uploads/1776019588820.jpg",
+      "/uploads/1776019588838.jpg",
+      "/uploads/1776019588876.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black",
+        "White",
+        "Graphite"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T12:40:00.000Z"
+  },
+  {
+    "id": 1776512000010,
+    "name": "Samsung Galaxy Tab S8",
+    "description": "Samsung Galaxy Tab S8 Ultra (256GB) - Graphite",
+    "price": 109999,
+    "discountPrice": 99999,
+    "category": "electronics",
+    "brand": "Samsung",
+    "rating": 4.7,
+    "stock": 20,
+    "thumbnail": "/uploads/1776484903317.jpg",
+    "images": [
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903334.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Graphite",
+        "Silver",
+        "Pink Gold"
+      ],
+      "storage": [
+        "128GB",
+        "256GB",
+        "512GB"
+      ]
+    },
+    "createdAt": "2026-04-18T12:45:00.000Z"
+  },
+  {
+    "id": 1776512000011,
+    "name": "MSI Gaming Desktop",
+    "description": "MSI Infinite RS Gaming Desktop, i9, RTX 4080",
+    "price": 249999,
+    "discountPrice": 229999,
+    "category": "electronics",
+    "brand": "MSI",
+    "rating": 4.9,
+    "stock": 8,
+    "thumbnail": "/uploads/1776486259779.png",
+    "images": [
+      "/uploads/1776486259823.jpg",
+      "/uploads/1776486259856.jpg",
+      "/uploads/1776486259911.jpg",
+      "/uploads/1776486259928.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black"
+      ],
+      "storage": [
+        "1TB",
+        "2TB"
+      ]
+    },
+    "createdAt": "2026-04-18T12:50:00.000Z"
+  },
+  {
+    "id": 1776512000012,
+    "name": "Bose QC45",
+    "description": "Bose QuietComfort 45 Noise Cancelling Headphones",
+    "price": 32999,
+    "discountPrice": 29999,
+    "category": "electronics",
+    "brand": "Bose",
+    "rating": 4.6,
+    "stock": 35,
+    "thumbnail": "/uploads/1776511783638.png",
+    "images": [
+      "/uploads/1776511783688.jpg",
+      "/uploads/1776511783725.jpg",
+      "/uploads/1776511783760.jpg",
+      "/uploads/1776511783776.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black",
+        "White Smoke",
+        "Triple Black"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T12:55:00.000Z"
+  },
+  {
+    "id": 1776512000013,
+    "name": "Apple Watch Ultra",
+    "description": "Apple Watch Ultra 49mm Titanium Case",
+    "price": 89999,
+    "discountPrice": 84999,
+    "category": "electronics",
+    "brand": "Apple",
+    "rating": 4.8,
+    "stock": 30,
+    "thumbnail": "/uploads/1776019588736.png",
+    "images": [
+      "/uploads/1776019588779.jpg",
+      "/uploads/1776019588820.jpg",
+      "/uploads/1776019588838.jpg",
+      "/uploads/1776019588876.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Titanium",
+        "Black"
+      ],
+      "storage": [
+        "32GB",
+        "64GB"
+      ]
+    },
+    "createdAt": "2026-04-18T13:00:00.000Z"
+  },
+  {
+    "id": 1776512000014,
+    "name": "Lenovo Legion 5",
+    "description": "Lenovo Legion 5 Gaming Laptop, Ryzen 7, RTX 3060",
+    "price": 119999,
+    "discountPrice": 109999,
+    "category": "electronics",
+    "brand": "Lenovo",
+    "rating": 4.5,
+    "stock": 15,
+    "thumbnail": "/uploads/1776484903317.jpg",
+    "images": [
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903334.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Phantom Blue",
+        "Storm Gray"
+      ],
+      "storage": [
+        "512GB",
+        "1TB"
+      ]
+    },
+    "createdAt": "2026-04-18T13:05:00.000Z"
+  },
+  {
+    "id": 1776512000015,
+    "name": "DJI Mini 3 Pro",
+    "description": "DJI Mini 3 Pro Drone with RC Controller",
+    "price": 79999,
+    "discountPrice": 74999,
+    "category": "electronics",
+    "brand": "DJI",
+    "rating": 4.7,
+    "stock": 10,
+    "thumbnail": "/uploads/1776486259779.png",
+    "images": [
+      "/uploads/1776486259823.jpg",
+      "/uploads/1776486259856.jpg",
+      "/uploads/1776486259911.jpg",
+      "/uploads/1776486259928.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Gray"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T13:10:00.000Z"
+  },
+  {
+    "id": 1776512000016,
+    "name": "Razer Blade 15",
+    "description": "Razer Blade 15 Advanced Gaming Laptop, i7, RTX 3080",
+    "price": 219999,
+    "discountPrice": 199999,
+    "category": "electronics",
+    "brand": "Razer",
+    "rating": 4.8,
+    "stock": 7,
+    "thumbnail": "/uploads/1776511783638.png",
+    "images": [
+      "/uploads/1776511783688.jpg",
+      "/uploads/1776511783725.jpg",
+      "/uploads/1776511783760.jpg",
+      "/uploads/1776511783776.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black",
+        "Mercury White"
+      ],
+      "storage": [
+        "512GB",
+        "1TB"
+      ]
+    },
+    "createdAt": "2026-04-18T13:15:00.000Z"
+  },
+  {
+    "id": 1776512000017,
+    "name": "Canon EOS R6",
+    "description": "Canon EOS R6 Mirrorless Camera with 24-105mm Lens",
+    "price": 189999,
+    "discountPrice": 179999,
+    "category": "electronics",
+    "brand": "Canon",
+    "rating": 4.9,
+    "stock": 12,
+    "thumbnail": "/uploads/1776019588736.png",
+    "images": [
+      "/uploads/1776019588779.jpg",
+      "/uploads/1776019588820.jpg",
+      "/uploads/1776019588838.jpg",
+      "/uploads/1776019588876.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T13:20:00.000Z"
+  },
+  {
+    "id": 1776512000018,
+    "name": "JBL Flip 6",
+    "description": "JBL Flip 6 Portable Bluetooth Speaker",
+    "price": 11999,
+    "discountPrice": 9999,
+    "category": "electronics",
+    "brand": "JBL",
+    "rating": 4.5,
+    "stock": 55,
+    "thumbnail": "/uploads/1776484903317.jpg",
+    "images": [
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903334.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black",
+        "Red",
+        "Blue",
+        "Teal"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T13:25:00.000Z"
+  },
+  {
+    "id": 1776512000019,
+    "name": "LG C2 OLED TV",
+    "description": "LG C2 55-inch 4K Smart OLED TV",
+    "price": 139999,
+    "discountPrice": 129999,
+    "category": "electronics",
+    "brand": "LG",
+    "rating": 4.8,
+    "stock": 10,
+    "thumbnail": "/uploads/1776486259779.png",
+    "images": [
+      "/uploads/1776486259823.jpg",
+      "/uploads/1776486259856.jpg",
+      "/uploads/1776486259911.jpg",
+      "/uploads/1776486259928.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T13:30:00.000Z"
+  },
+  {
+    "id": 1776512000020,
+    "name": "GoPro HERO11",
+    "description": "GoPro HERO11 Black Action Camera",
+    "price": 49999,
+    "discountPrice": 44999,
+    "category": "electronics",
+    "brand": "GoPro",
+    "rating": 4.6,
+    "stock": 28,
+    "thumbnail": "/uploads/1776511783638.png",
+    "images": [
+      "/uploads/1776511783688.jpg",
+      "/uploads/1776511783725.jpg",
+      "/uploads/1776511783760.jpg",
+      "/uploads/1776511783776.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T13:35:00.000Z"
+  },
+  {
+    "id": 1776512000021,
+    "name": "Microsoft Surface Laptop 5",
+    "description": "Microsoft Surface Laptop 5, i5, 8GB RAM, 256GB SSD",
+    "price": 104999,
+    "discountPrice": 99999,
+    "category": "electronics",
+    "brand": "Microsoft",
+    "rating": 4.4,
+    "stock": 18,
+    "thumbnail": "/uploads/1776019588736.png",
+    "images": [
+      "/uploads/1776019588779.jpg",
+      "/uploads/1776019588820.jpg",
+      "/uploads/1776019588838.jpg",
+      "/uploads/1776019588876.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Platinum",
+        "Matte Black",
+        "Cobalt Blue"
+      ],
+      "storage": [
+        "256GB",
+        "512GB"
+      ]
+    },
+    "createdAt": "2026-04-18T13:40:00.000Z"
+  },
+  {
+    "id": 1776512000022,
+    "name": "SteelSeries Arctis 7",
+    "description": "SteelSeries Arctis 7 Wireless Gaming Headset",
+    "price": 14999,
+    "discountPrice": 12999,
+    "category": "electronics",
+    "brand": "SteelSeries",
+    "rating": 4.6,
+    "stock": 40,
+    "thumbnail": "/uploads/1776484903317.jpg",
+    "images": [
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903334.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black",
+        "White"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T13:45:00.000Z"
+  },
+  {
+    "id": 1776512000023,
+    "name": "Acer Predator Helios",
+    "description": "Acer Predator Helios 300 Gaming Laptop, i7, RTX 3070",
+    "price": 134999,
+    "discountPrice": 124999,
+    "category": "electronics",
+    "brand": "Acer",
+    "rating": 4.5,
+    "stock": 14,
+    "thumbnail": "/uploads/1776486259779.png",
+    "images": [
+      "/uploads/1776486259823.jpg",
+      "/uploads/1776486259856.jpg",
+      "/uploads/1776486259911.jpg",
+      "/uploads/1776486259928.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black"
+      ],
+      "storage": [
+        "512GB",
+        "1TB"
+      ]
+    },
+    "createdAt": "2026-04-18T13:50:00.000Z"
+  },
+  {
+    "id": 1776512000024,
+    "name": "Fitbit Charge 5",
+    "description": "Fitbit Charge 5 Fitness Tracker",
+    "price": 14999,
+    "discountPrice": 12999,
+    "category": "electronics",
+    "brand": "Fitbit",
+    "rating": 4.4,
+    "stock": 50,
+    "thumbnail": "/uploads/1776511783638.png",
+    "images": [
+      "/uploads/1776511783688.jpg",
+      "/uploads/1776511783725.jpg",
+      "/uploads/1776511783760.jpg",
+      "/uploads/1776511783776.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black",
+        "Blue",
+        "Pink"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T13:55:00.000Z"
+  },
+  {
+    "id": 1776512000025,
+    "name": "Sennheiser Momentum 4",
+    "description": "Sennheiser Momentum 4 Wireless Headphones",
+    "price": 34999,
+    "discountPrice": 31999,
+    "category": "electronics",
+    "brand": "Sennheiser",
+    "rating": 4.7,
+    "stock": 32,
+    "thumbnail": "/uploads/1776019588736.png",
+    "images": [
+      "/uploads/1776019588779.jpg",
+      "/uploads/1776019588820.jpg",
+      "/uploads/1776019588838.jpg",
+      "/uploads/1776019588876.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black",
+        "White"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T14:00:00.000Z"
+  },
+  {
+    "id": 1776512000026,
+    "name": "Anker PowerCore",
+    "description": "Anker PowerCore 26800mAh Power Bank",
+    "price": 5999,
+    "discountPrice": 4999,
+    "category": "electronics",
+    "brand": "Anker",
+    "rating": 4.6,
+    "stock": 100,
+    "thumbnail": "/uploads/1776484903317.jpg",
+    "images": [
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903334.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black",
+        "White"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T14:05:00.000Z"
+  },
+  {
+    "id": 1776512000027,
+    "name": "Ring Video Doorbell",
+    "description": "Ring Video Doorbell 4 with HD Video",
+    "price": 15999,
+    "discountPrice": 13999,
+    "category": "electronics",
+    "brand": "Ring",
+    "rating": 4.5,
+    "stock": 25,
+    "thumbnail": "/uploads/1776486259779.png",
+    "images": [
+      "/uploads/1776486259823.jpg",
+      "/uploads/1776486259856.jpg",
+      "/uploads/1776486259911.jpg",
+      "/uploads/1776486259928.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Satin Nickel",
+        "Black"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T14:10:00.000Z"
+  },
+  {
+    "id": 1776512000028,
+    "name": "Echo Dot 5th Gen",
+    "description": "Amazon Echo Dot 5th Gen Smart Speaker",
+    "price": 4999,
+    "discountPrice": 3999,
+    "category": "electronics",
+    "brand": "Amazon",
+    "rating": 4.5,
+    "stock": 75,
+    "thumbnail": "/uploads/1776511783638.png",
+    "images": [
+      "/uploads/1776511783688.jpg",
+      "/uploads/1776511783725.jpg",
+      "/uploads/1776511783760.jpg",
+      "/uploads/1776511783776.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Charcoal",
+        "Glacier White",
+        "Deep Sea Blue"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T14:15:00.000Z"
+  },
+  {
+    "id": 1776512000029,
+    "name": "Nest Learning Thermostat",
+    "description": "Google Nest Learning Thermostat 3rd Gen",
+    "price": 24999,
+    "discountPrice": 22999,
+    "category": "electronics",
+    "brand": "Google",
+    "rating": 4.7,
+    "stock": 20,
+    "thumbnail": "/uploads/1776019588736.png",
+    "images": [
+      "/uploads/1776019588779.jpg",
+      "/uploads/1776019588820.jpg",
+      "/uploads/1776019588838.jpg",
+      "/uploads/1776019588876.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Stainless Steel",
+        "Copper",
+        "Black"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T14:20:00.000Z"
+  },
+  {
+    "id": 1776512000030,
+    "name": "TP-Link WiFi 6 Router",
+    "description": "TP-Link Archer AX6000 WiFi 6 Router",
+    "price": 18999,
+    "discountPrice": 16999,
+    "category": "electronics",
+    "brand": "TP-Link",
+    "rating": 4.6,
+    "stock": 30,
+    "thumbnail": "/uploads/1776484903317.jpg",
+    "images": [
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903331.jpeg",
+      "/uploads/1776484903334.jpg"
+    ],
+    "variants": {
+      "color": [
+        "Black"
+      ],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T14:25:00.000Z"
+  },
+  {
+    "id": "18c445b9-9bbe-4bb2-a838-a65d8ab5b48b",
+    "name": "helloo helloo",
+    "description": "f",
+    "price": 1254,
+    "discountPrice": 12,
+    "category": "electronics",
+    "brand": "Apple",
+    "rating": 4.5,
+    "stock": 25,
+    "thumbnail": null,
+    "images": [],
+    "variants": {
+      "color": [],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T18:57:23.285Z"
+  },
+  {
+    "id": "33da0911-3539-4488-9303-53e1d2f6922b",
+    "name": "helloo helloo",
+    "description": "f",
+    "price": 1254,
+    "discountPrice": 12,
+    "category": "electronics",
+    "brand": "Apple",
+    "rating": 4.5,
+    "stock": 25,
+    "thumbnail": null,
+    "images": [],
+    "variants": {
+      "color": [],
+      "storage": []
+    },
+    "createdAt": "2026-04-18T18:59:04.943Z"
+  },
+  {
+    "id": "397d9b5a-f6c1-43e1-870b-29351debee77",
+    "name": "iPhone 18 Pro",
+    "description": "fff",
+    "price": 129998.98,
+    "discountPrice": 119999,
+    "category": "electronics",
+    "brand": "Apple",
+    "rating": 4.8,
+    "stock": 25,
+    "thumbnail": "/uploads/1776882922282.png",
+    "images": [
+      "/uploads/1776882922290.jpg",
+      "/uploads/1776882922298.jpg",
+      "/uploads/1776882922316.jpg"
+    ],
+    "variants": {
+      "color": [
+        "black"
+      ],
+      "storage": [
+        "252gb"
+      ]
+    },
+    "createdAt": "2026-04-22T18:35:22.324Z"
+  },
+  {
+    "id": "2c78a5d2-d8d6-42bd-ac3a-3ff8fb0e97fd",
+    "name": "iPhone 18 Pro55555555555",
+    "description": "fff",
+    "price": 129998.98,
+    "discountPrice": 119999,
+    "category": "electronics",
+    "brand": "Apple",
+    "rating": 4.8,
+    "stock": 25,
+    "thumbnail": "/uploads/1776952583193.jpeg",
+    "images": [
+      "/uploads/1776952583199.jpg",
+      "/uploads/1776952583221.jpg"
+    ],
+    "variants": {
+      "color": [],
+      "storage": []
+    },
+    "createdAt": "2026-04-22T18:35:25.530Z",
+    "updatedAt": "2026-04-23T13:56:25.291Z"
+  }
+]

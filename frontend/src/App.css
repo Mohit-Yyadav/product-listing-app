@@ -1,0 +1,769 @@
+/* App.css - Complete Amazon-style Stylesheet */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Amazon Ember', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  background-color: #EAEDED;
+  color: #111;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* ============================================
+   MAIN LAYOUT
+   ============================================ */
+.main-container {
+  display: flex;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ============================================
+   LOADING SPINNER
+   ============================================ */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  text-align: center;
+  background: white;
+  border-radius: 8px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #ff9900;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ============================================
+   ERROR CONTAINER
+   ============================================ */
+.error-container {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.error-container i {
+  font-size: 48px;
+  color: #cc0c39;
+  margin-bottom: 20px;
+}
+
+.error-container h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.error-container p {
+  color: #565959;
+  margin-bottom: 10px;
+}
+
+.error-container code {
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.retry-btn {
+  margin-top: 20px;
+  padding: 10px 24px;
+  background-color: #ff9900;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+  transition: all 0.2s ease;
+}
+
+.retry-btn:hover {
+  background-color: #e68900;
+  transform: translateY(-1px);
+}
+
+.retry-btn:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   RESULTS INFO
+   ============================================ */
+.results-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.results-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #565959;
+  font-size: 14px;
+}
+
+.results-left i {
+  color: #ff9900;
+  font-size: 16px;
+}
+
+.results-right {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.api-status {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.api-status i {
+  font-size: 12px;
+}
+
+/* ============================================
+   SORTING SELECTS
+   ============================================ */
+.sort-select, .sort-order-select {
+  padding: 8px 12px;
+  border: 1px solid #d6d6d6;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.sort-select:hover, .sort-order-select:hover {
+  border-color: #ff9900;
+}
+
+.sort-select:focus, .sort-order-select:focus {
+  outline: none;
+  border-color: #ff9900;
+  box-shadow: 0 0 0 2px rgba(255,153,0,0.2);
+}
+
+/* ============================================
+   ADD PRODUCT BUTTON
+   ============================================ */
+.add-product-btn-header {
+  padding: 8px 16px;
+  background-color: #ff9900;
+  color: #111;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.add-product-btn-header:hover {
+  background-color: #e68a00;
+  transform: translateY(-1px);
+}
+
+.add-product-btn-header:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   GRID VIEW
+   ============================================ */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* ============================================
+   LIST VIEW
+   ============================================ */
+.products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ============================================
+   PRODUCT CARD STYLES (Amazon Style)
+   ============================================ */
+.product-card-grid {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card-grid:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.product-card-list {
+  display: flex;
+  gap: 20px;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.product-card-list:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Product Card Inner Elements */
+.product-brand {
+  font-size: 12px;
+  color: #565959;
+  margin-bottom: 4px;
+}
+
+.product-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 6px 0;
+  color: #0F1111;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  transition: color 0.2s ease;
+}
+
+.product-title:hover {
+  color: #c45500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.star {
+  font-size: 14px;
+}
+
+.star.filled, .star.half {
+  color: #FFA41C;
+}
+
+.star.empty {
+  color: #D5D5D5;
+}
+
+.rating-count {
+  font-size: 12px;
+  color: #007185;
+}
+
+.product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.current-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #B12704;
+}
+
+.original-price {
+  font-size: 13px;
+  color: #565959;
+  text-decoration: line-through;
+}
+
+.product-stock {
+  margin-bottom: 12px;
+}
+
+.in-stock {
+  font-size: 12px;
+  color: #007600;
+  font-weight: 500;
+}
+
+.out-of-stock {
+  font-size: 12px;
+  color: #cc0c39;
+  font-weight: 500;
+}
+
+/* Product Card Buttons */
+.edit-btn, .delete-btn {
+  transition: all 0.2s ease;
+}
+
+.edit-btn:hover {
+  background: #e68a00 !important;
+  transform: translateY(-1px);
+}
+
+.delete-btn:hover {
+  background: #c0392b !important;
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+.pagination-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 15px 0;
+  border-top: 1px solid #e7e7e7;
+  color: #565959;
+  font-size: 13px;
+}
+
+.page-size-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-size-selector select {
+  padding: 6px 10px;
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.page-size-selector select:hover {
+  border-color: #ff9900;
+}
+
+.page-size-selector select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   NO RESULTS
+   ============================================ */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 8px;
+}
+
+.no-results i {
+  font-size: 64px;
+  color: #ff9900;
+  margin-bottom: 20px;
+}
+
+.no-results h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.no-results p {
+  color: #565959;
+  margin-bottom: 10px;
+}
+
+.add-first-btn {
+  margin-top: 20px;
+  padding: 12px 28px;
+  background-color: #ff9900;
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.add-first-btn:hover {
+  background-color: #e68a00;
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   FILTER ANIMATIONS
+   ============================================ */
+.filter-group {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Filter Container Scrollbar */
+.filters-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.filters-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.filters-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.filters-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ============================================
+   MODAL STYLES (Product Form)
+   ============================================ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-container {
+  max-width: 900px;
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   TOOLTIP STYLES
+   ============================================ */
+[title] {
+  position: relative;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .sidebar {
+    width: 100%;
+    position: static;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .results-info {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .results-right {
+    justify-content: space-between;
+  }
+  
+  .pagination-info {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .product-card-list {
+    flex-direction: column;
+  }
+  
+  .product-card-list .image-container {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .results-right {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .sort-select, .sort-order-select, .add-product-btn-header {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .modal-container {
+    margin: 10px;
+    max-height: 95vh;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  .sidebar, .navbar, .pagination, .add-product-btn-header {
+    display: none;
+  }
+  
+  .product-card-grid, .product-card-list {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* ============================================
+   DARK MODE SUPPORT (Optional)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  /* Add dark mode styles if needed */
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ============================================
+   FOCUS VISIBLE (Accessibility)
+   ============================================ */
+:focus-visible {
+  outline: 2px solid #ff9900;
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #ff9900;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   TRANSITIONS
+   ============================================ */
+button, 
+a, 
+input, 
+select,
+.product-card-grid,
+.product-card-list {
+  transition: all 0.2s ease;
+}
