@@ -1,48 +1,46 @@
 const express = require('express');
 require('dotenv').config();
 const cors = require('cors');
-const helmet = require('helmet');
-const morgan = require('morgan');
 const path = require('path');
 
 const app = express();
 
-// 🟢 Security headers
-app.use(helmet());
-
-// 🟢 Logging (helps debugging on Render)
-app.use(morgan('dev'));
-
-// 🟢 Body parser
+// Body parser
 app.use(express.json());
 
-// 🟢 CORS (secure)
+// CORS (secure)
+const allowedOrigins = [
+  "http://localhost:5173",
+  process.env.CLIENT_URL
+].filter(Boolean);
+
+
+
+
 app.use(cors({
-  origin: process.env.CLIENT_URL,
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.log("Blocked by CORS:", origin);
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true
 }));
 
-// 🟢 Routes
+// Routes
 const productRoutes = require('./routes/productRoutes');
 app.use('/api/products', productRoutes);
 
-// 🟢 Secure static uploads (ONLY images should exist)
-app.use('/uploads', express.static(path.join(__dirname, 'uploads'), {
-  setHeaders: (res) => {
-    res.set("Cross-Origin-Resource-Policy", "cross-origin");
-  }
-}));
+// Static uploads
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// 🟢 Health check (important for Render)
+// Health route
 app.get('/', (req, res) => {
-  res.send('API is running 🚀');
-});
-
-// 🟢 Global error handler
-app.use((err, req, res, next) => {
-  console.error(err.message);
-  res.status(500).json({ error: err.message });
+  res.send("API running 🚀");
 });
 
 module.exports = app;
