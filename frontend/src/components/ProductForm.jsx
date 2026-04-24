@@ -195,99 +195,74 @@ const ProductForm = ({ product, onSubmit, onClose, categories, brands }) => {
   };
 
   // Submit form using FormData
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    if (!validateForm()) {
-      alert("Please fix the errors before submitting");
-      return;
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (isSubmitting) return;
+
+  // ✅ Validate first
+  if (!validateForm()) {
+    alert("Please fix the errors before submitting");
+    return;
+  }
+
+  setIsSubmitting(true);
+
+  try {
+    // ✅ Prepare clean product data (for parent App.jsx)
+    const productData = {
+      ...form,
+      name: form.name.trim(),
+      description: form.description.trim(),
+      price: Number(form.price),
+      discountPrice: form.discountPrice ? Number(form.discountPrice) : "",
+      rating: form.rating ? Number(form.rating) : "",
+      stock: form.stock ? Number(form.stock) : "",
+      thumbnailFile,
+      imageFiles,
+    };
+
+    // ✅ Send to parent (App.jsx handles API)
+    if (onSubmit) {
+      await onSubmit(productData);
     }
-    
-    setIsSubmitting(true);
 
-    try {
-      const formData = new FormData();
-      
-      // Append all text fields
-      Object.keys(form).forEach(key => {
-        if (form[key] && form[key] !== '') {
-          formData.append(key, form[key]);
-        }
+    alert(`✅ Product ${product ? "Updated" : "Created"} Successfully!`);
+
+    // ✅ Reset only in create mode
+    if (!product) {
+      setForm({
+        name: "",
+        description: "",
+        price: "",
+        discountPrice: "",
+        category: "",
+        brand: "",
+        rating: "",
+        stock: "",
+        color: "",
+        storage: ""
       });
-      
-      // Append thumbnail file
-      if (thumbnailFile) {
-        formData.append('thumbnail', thumbnailFile);
-      }
-      
-      // Append image files
-      imageFiles.forEach((imageFile) => {
-        formData.append('images', imageFile);
-      });
-      
-      let response;
-      
-      if (product && product.id) {
-        response = await axios.put(
-          `${API_BASE_URL}/products/${product.id}`,
-          formData,
-          { headers: { 'Content-Type': 'multipart/form-data' } }
-        );
-        alert("✅ Product Updated Successfully!");
-      } else {
-        response = await axios.post(
-          `${API_BASE_URL}/products`,
-          formData,
-          { headers: { 'Content-Type': 'multipart/form-data' } }
-        );
-        alert("✅ Product Created Successfully!");
-      }
 
-      if (onSubmit) {
-        onSubmit(response.data.product || response.data);
-      }
-
-      // Reset form only for create mode
-      if (!product) {
-        setForm({
-          name: "",
-          description: "",
-          price: "",
-          discountPrice: "",
-          category: "",
-          brand: "",
-          rating: "",
-          stock: "",
-          color: "",
-          storage: ""
-        });
-        setThumbnailFile(null);
-        setThumbnailPreview(null);
-        setImageFiles([]);
-        setImagePreviews([]);
-      }
-
-      if (onClose) {
-        setTimeout(() => onClose(), 1500);
-      }
-
-    } catch (err) {
-      console.error("Error saving product:", err);
-      let errorMessage = "Error saving product. Please try again.";
-      
-      if (err.response?.data?.message) {
-        errorMessage = err.response.data.message;
-      } else if (err.response?.data?.errors) {
-        errorMessage = err.response.data.errors.join(', ');
-      } else if (err.request) {
-        errorMessage = "Cannot connect to server. Please check if backend is running";
-      }
-      
-      alert(`❌ ${errorMessage}`);
-    } finally {
-      setIsSubmitting(false);
+      setThumbnailFile(null);
+      setThumbnailPreview(null);
+      setImageFiles([]);
+      setImagePreviews([]);
+      setErrors({});
     }
-  };
+
+    // ✅ Close modal
+    if (onClose) {
+      setTimeout(() => onClose(), 1000);
+    }
+
+  } catch (err) {
+    console.error("Submit error:", err);
+    alert(`❌ ${err.message || "Something went wrong"}`);
+  } finally {
+    setIsSubmitting(false); // ✅ Always reset
+  }
+};
 
   const styles = {
     modalOverlay: {
