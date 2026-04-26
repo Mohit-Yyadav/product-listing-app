@@ -62,38 +62,24 @@
     "createdAt": "2026-04-24T18:06:36.358Z"
   },
   {
-    "id": "12168dbb-de87-4238-8a92-07dca005f1c2",
-    "name": "helloo helloo",
-    "description": "qq",
-    "price": 1233,
-    "discountPrice": 23,
-    "brand": "hello",
-    "rating": null,
-    "stock": 12,
-    "thumbnail": null,
-    "images": [],
-    "variants": {
-      "color": [],
-      "storage": []
-    },
-    "createdAt": "2026-04-24T18:06:39.017Z",
-    "updatedAt": "2026-04-26T12:09:00.586Z"
-  },
-  {
     "id": "8ea50e38-33ec-40cd-8cf4-1130d26be41c",
     "name": "2BHK Apartment",
     "price": 5555,
     "discountPrice": 22,
     "brand": "iphone",
-    "rating": null,
-    "stock": null,
-    "thumbnail": "/uploads/1777205306062.jpg",
-    "images": [],
+    "rating": 5,
+    "stock": 2,
+    "thumbnail": "/uploads/1777205619212.jpg",
+    "images": [
+      "/uploads/1777205619275.jpg",
+      "/uploads/1777205619276.jpg",
+      "/uploads/1777205619276.jpg"
+    ],
     "variants": {
       "color": [],
       "storage": []
     },
     "createdAt": "2026-04-24T18:18:39.698Z",
-    "updatedAt": "2026-04-26T12:08:26.077Z"
+    "updatedAt": "2026-04-26T12:13:39.283Z"
   }
 ]

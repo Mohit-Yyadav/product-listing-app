@@ -1,4 +1,4 @@
-// App.jsx - Fully Upgraded with 10 Products Per Page and Enhanced Features
+// App.jsx - Complete with Amazon-Style Loading Upgrade
 import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "./components/Navbar";
 import Filters from "./components/Filters";
@@ -11,14 +11,17 @@ const App = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [loadingMessage, setLoadingMessage] = useState("Connecting to server...");
   const [error, setError] = useState(null);
   const [viewMode, setViewMode] = useState("grid");
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage] = useState(10); // Changed to 10 products per page
+  const [productsPerPage] = useState(10);
   const [showProductForm, setShowProductForm] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
   const [totalPages, setTotalPages] = useState(1);
   const [totalItems, setTotalItems] = useState(0);
+  const [toastMessage, setToastMessage] = useState(null);
   
   // Filter states with sorting
   const [filters, setFilters] = useState({
@@ -33,13 +36,29 @@ const App = () => {
     sortOrder: "desc"
   });
 
-  const API_BASE_URL = import.meta.env.VITE_API_URL;
+  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
-  // Fetch products from backend API with all filters
+  // Show toast notification
+  const showToast = (message, type = 'success') => {
+    setToastMessage({ message, type });
+    setTimeout(() => setToastMessage(null), 3000);
+  };
+
+  // Fetch products with loading progress simulation
   const fetchProducts = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
+      setLoadingProgress(0);
+      setLoadingMessage("Initializing connection...");
+      
+      // Simulate loading progress
+      const progressInterval = setInterval(() => {
+        setLoadingProgress(prev => {
+          if (prev >= 90) return prev;
+          return prev + 10;
+        });
+      }, 200);
       
       // Build query parameters
       const params = new URLSearchParams();
@@ -56,6 +75,8 @@ const App = () => {
       params.append("page", currentPage);
       params.append("limit", productsPerPage);
       
+      setLoadingMessage("Fetching products from server...");
+      
       const url = `${API_BASE_URL}/api/products${params.toString() ? `?${params.toString()}` : ""}`;
       
       const response = await fetch(url);
@@ -63,6 +84,9 @@ const App = () => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
+      
+      setLoadingMessage("Processing product data...");
+      setLoadingProgress(95);
       
       const data = await response.json();
       
@@ -84,20 +108,27 @@ const App = () => {
         total = 0;
       }
       
-      setProducts(productsData);
-      setFilteredProducts(productsData);
-      setTotalPages(pages);
-      setTotalItems(total);
+      setLoadingProgress(100);
+      setLoadingMessage("Complete!");
+      
+      setTimeout(() => {
+        setProducts(productsData);
+        setFilteredProducts(productsData);
+        setTotalPages(pages);
+        setTotalItems(total);
+        setLoading(false);
+      }, 300);
+      
+      clearInterval(progressInterval);
       
     } catch (err) {
       console.error("Error fetching products:", err);
       setError(`Failed to connect to backend: ${err.message}`);
       setProducts([]);
       setFilteredProducts([]);
-    } finally {
       setLoading(false);
     }
-  }, [filters, currentPage, productsPerPage]);
+  }, [filters, currentPage, productsPerPage, API_BASE_URL]);
 
   // Create new product with FormData
   const createProduct = async (productData) => {
@@ -151,12 +182,12 @@ const App = () => {
       setShowProductForm(false);
       setEditingProduct(null);
       
-      alert(`✅ Product "${result.product?.name || productData.name}" created successfully!`);
+      showToast(`✅ Product "${result.product?.name || productData.name}" created successfully!`, 'success');
       
       return result;
     } catch (err) {
       console.error("Error creating product:", err);
-      alert(`❌ ${err.message}`);
+      showToast(`❌ ${err.message}`, 'error');
       throw err;
     } finally {
       setLoading(false);
@@ -213,12 +244,12 @@ const App = () => {
       setShowProductForm(false);
       setEditingProduct(null);
       
-      alert(`✅ Product "${result.product?.name || productData.name}" updated successfully!`);
+      showToast(`✅ Product "${result.product?.name || productData.name}" updated successfully!`, 'success');
       
       return result;
     } catch (err) {
       console.error("Error updating product:", err);
-      alert(`❌ ${err.message}`);
+      showToast(`❌ ${err.message}`, 'error');
       throw err;
     } finally {
       setLoading(false);
@@ -250,11 +281,11 @@ const App = () => {
       
       await fetchProducts();
       
-      alert(`✅ Product "${productName}" deleted successfully!`);
+      showToast(`✅ Product "${productName}" deleted successfully!`, 'success');
       
     } catch (err) {
       console.error("Error deleting product:", err);
-      alert(`❌ ${err.message}`);
+      showToast(`❌ ${err.message}`, 'error');
     } finally {
       setLoading(false);
     }
@@ -267,7 +298,7 @@ const App = () => {
 
   const handleFormSubmit = async (productData) => {
     if (editingProduct) {
-      await updateProduct(editingProduct.id, productData);
+      await updateProduct(editingProduct.id || editingProduct._id, productData);
     } else {
       await createProduct(productData);
     }
@@ -292,8 +323,263 @@ const App = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Skeleton Product Card Component
+  const SkeletonProductCard = () => (
+    <div style={skeletonStyles.card}>
+      <div style={skeletonStyles.image}></div>
+      <div style={skeletonStyles.content}>
+        <div style={skeletonStyles.brand}></div>
+        <div style={skeletonStyles.title}></div>
+        <div style={skeletonStyles.rating}></div>
+        <div style={skeletonStyles.price}></div>
+        <div style={skeletonStyles.buttons}>
+          <div style={skeletonStyles.button}></div>
+          <div style={skeletonStyles.button}></div>
+          <div style={skeletonStyles.button}></div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const skeletonStyles = {
+    card: {
+      background: "white",
+      borderRadius: "8px",
+      overflow: "hidden",
+      boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+      height: "100%",
+      display: "flex",
+      flexDirection: "column",
+    },
+    image: {
+      paddingTop: "100%",
+      background: "linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)",
+      backgroundSize: "200% 100%",
+      animation: "shimmer 1.5s infinite",
+    },
+    content: {
+      padding: "12px",
+      flex: 1,
+    },
+    brand: {
+      height: "12px",
+      width: "60%",
+      background: "#e0e0e0",
+      borderRadius: "4px",
+      marginBottom: "8px",
+      animation: "shimmer 1.5s infinite",
+    },
+    title: {
+      height: "16px",
+      width: "90%",
+      background: "#e0e0e0",
+      borderRadius: "4px",
+      marginBottom: "8px",
+      animation: "shimmer 1.5s infinite",
+    },
+    rating: {
+      height: "14px",
+      width: "40%",
+      background: "#e0e0e0",
+      borderRadius: "4px",
+      marginBottom: "8px",
+      animation: "shimmer 1.5s infinite",
+    },
+    price: {
+      height: "20px",
+      width: "50%",
+      background: "#e0e0e0",
+      borderRadius: "4px",
+      marginBottom: "12px",
+      animation: "shimmer 1.5s infinite",
+    },
+    buttons: {
+      display: "flex",
+      gap: "8px",
+      marginTop: "auto",
+    },
+    button: {
+      flex: 1,
+      height: "32px",
+      background: "#e0e0e0",
+      borderRadius: "4px",
+      animation: "shimmer 1.5s infinite",
+    },
+  };
+
+  // Amazon-style loading styles
+  const amazonLoadingStyles = {
+    container: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      minHeight: "500px",
+      padding: "40px",
+      background: "linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%)",
+      borderRadius: "12px",
+      textAlign: "center",
+    },
+    logoContainer: {
+      marginBottom: "40px",
+      animation: "fadeInDown 0.5s ease",
+    },
+    amazonLogo: {
+      fontSize: "48px",
+      fontWeight: "bold",
+      display: "flex",
+      alignItems: "center",
+      gap: "4px",
+    },
+    amazonText: {
+      background: "linear-gradient(135deg, #232f3e 0%, #ff9900 100%)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+      backgroundClip: "text",
+    },
+    dot: {
+      color: "#ff9900",
+      fontSize: "52px",
+    },
+    smile: {
+      fontSize: "48px",
+      animation: "bounce 1s ease infinite",
+    },
+    progressContainer: {
+      width: "100%",
+      maxWidth: "400px",
+      marginBottom: "30px",
+    },
+    progressBar: {
+      width: "100%",
+      height: "6px",
+      backgroundColor: "#e0e0e0",
+      borderRadius: "3px",
+      overflow: "hidden",
+      marginBottom: "8px",
+    },
+    progressFill: {
+      height: "100%",
+      background: "linear-gradient(90deg, #ff9900 0%, #ffcc00 100%)",
+      borderRadius: "3px",
+      transition: "width 0.3s ease",
+      position: "relative",
+      overflow: "hidden",
+    },
+    progressText: {
+      fontSize: "12px",
+      color: "#666",
+      fontFamily: "monospace",
+    },
+    messageContainer: {
+      marginBottom: "30px",
+    },
+    loadingIcon: {
+      display: "flex",
+      gap: "8px",
+      justifyContent: "center",
+      marginBottom: "16px",
+    },
+    loadingDot: {
+      width: "8px",
+      height: "8px",
+      backgroundColor: "#ff9900",
+      borderRadius: "50%",
+      animation: "pulse 1.4s ease infinite",
+    },
+    loadingMessage: {
+      fontSize: "14px",
+      color: "#555",
+      fontWeight: "500",
+    },
+    tipsContainer: {
+      maxWidth: "350px",
+      padding: "16px",
+      backgroundColor: "rgba(255, 153, 0, 0.1)",
+      borderRadius: "8px",
+      marginBottom: "24px",
+      border: "1px solid rgba(255, 153, 0, 0.2)",
+    },
+    tipsTitle: {
+      fontSize: "12px",
+      fontWeight: "bold",
+      color: "#ff9900",
+      marginBottom: "8px",
+      textTransform: "uppercase",
+    },
+    tipsText: {
+      fontSize: "13px",
+      color: "#666",
+      lineHeight: "1.5",
+    },
+    endpointInfo: {
+      display: "flex",
+      gap: "8px",
+      alignItems: "center",
+      backgroundColor: "white",
+      padding: "8px 16px",
+      borderRadius: "20px",
+      boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+    },
+    endpointLabel: {
+      fontSize: "11px",
+      color: "#999",
+      fontWeight: "500",
+    },
+    endpointCode: {
+      fontSize: "11px",
+      fontFamily: "monospace",
+      color: "#ff9900",
+      background: "#f5f5f5",
+      padding: "2px 6px",
+      borderRadius: "4px",
+    },
+  };
+
+  // Toast notification styles
+  const toastStyles = {
+    position: "fixed",
+    top: "80px",
+    right: "20px",
+    zIndex: 10000,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: "20px",
+    padding: "14px 20px",
+    background: "white",
+    borderRadius: "8px",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+    animation: "slideInRight 0.3s ease",
+    minWidth: "300px",
+    borderLeft: "4px solid",
+  };
+
   return (
     <div className="app">
+      {/* Toast Notification */}
+      {toastMessage && (
+        <div style={{
+          ...toastStyles,
+          borderLeftColor: toastMessage.type === 'success' ? '#007600' : '#CC0C39'
+        }}>
+          <span>{toastMessage.message}</span>
+          <button 
+            onClick={() => setToastMessage(null)}
+            style={{
+              background: "none",
+              border: "none",
+              fontSize: "20px",
+              cursor: "pointer",
+              color: "#666",
+              padding: "0 4px"
+            }}
+          >
+            ×
+          </button>
+        </div>
+      )}
+      
       <Navbar 
         searchQuery={filters.searchQuery}
         setSearchQuery={(query) => {
@@ -325,12 +611,56 @@ const App = () => {
         
         <main className="content">
           {loading && products.length === 0 ? (
-            <div className="loading-spinner">
-              <div className="spinner"></div>
-              <p>Loading products from backend API...</p>
-              <p style={{ fontSize: "12px", color: "#666", marginTop: "10px" }}>
-                GET {API_BASE_URL}/api/products
-              </p>
+            <div style={amazonLoadingStyles.container}>
+              {/* Amazon Logo Animation */}
+              <div style={amazonLoadingStyles.logoContainer}>
+                <div style={amazonLoadingStyles.amazonLogo}>
+                  <span style={amazonLoadingStyles.amazonText}>amazon</span>
+                  <span style={amazonLoadingStyles.dot}>.</span>
+                  <span style={amazonLoadingStyles.smile}>🎯</span>
+                </div>
+              </div>
+              
+              {/* Progress Bar */}
+              <div style={amazonLoadingStyles.progressContainer}>
+                <div style={amazonLoadingStyles.progressBar}>
+                  <div 
+                    style={{
+                      ...amazonLoadingStyles.progressFill,
+                      width: `${loadingProgress}%`
+                    }}
+                  />
+                </div>
+                <span style={amazonLoadingStyles.progressText}>
+                  {loadingProgress}%
+                </span>
+              </div>
+              
+              {/* Loading Message */}
+              <div style={amazonLoadingStyles.messageContainer}>
+                <div style={amazonLoadingStyles.loadingIcon}>
+                  <div style={amazonLoadingStyles.loadingDot}></div>
+                  <div style={{...amazonLoadingStyles.loadingDot, animationDelay: "0.2s"}}></div>
+                  <div style={{...amazonLoadingStyles.loadingDot, animationDelay: "0.4s"}}></div>
+                </div>
+                <p style={amazonLoadingStyles.loadingMessage}>{loadingMessage}</p>
+              </div>
+              
+              {/* Loading Tips */}
+              <div style={amazonLoadingStyles.tipsContainer}>
+                <p style={amazonLoadingStyles.tipsTitle}>✨ Did you know?</p>
+                <p style={amazonLoadingStyles.tipsText}>
+                  Amazon-style product cards showcase discounts, ratings, and multiple images for better shopping experience!
+                </p>
+              </div>
+              
+              {/* Endpoint Info */}
+              <div style={amazonLoadingStyles.endpointInfo}>
+                <span style={amazonLoadingStyles.endpointLabel}>API Endpoint:</span>
+                <code style={amazonLoadingStyles.endpointCode}>
+                  {API_BASE_URL}/api/products
+                </code>
+              </div>
             </div>
           ) : error ? (
             <div className="error-container">
@@ -340,8 +670,8 @@ const App = () => {
               <div style={{ backgroundColor: "#f8f9fa", padding: "15px", borderRadius: "8px", margin: "15px 0", textAlign: "left" }}>
                 <strong>Troubleshooting steps:</strong>
                 <ul style={{ marginTop: "10px", marginLeft: "20px" }}>
-                  <li>Make sure your backend server is running on <code>http://localhost:5000</code></li>
-                  <li>Verify the products.json file exists in your backend directory</li>
+                  <li>Make sure your backend server is running on <code>{API_BASE_URL}</code></li>
+                  <li>Verify the database connection is working</li>
                   <li>Check that the route <code>GET /api/products</code> is working</li>
                   <li>Use the "Add Product" button to add products to your database</li>
                 </ul>
@@ -402,18 +732,27 @@ const App = () => {
               </div>
               
               <div className={`products-${viewMode}`}>
-                {products.map((product) => (
-                  <ProductCard 
-                    key={product.id}
-                    product={product} 
-                    viewMode={viewMode}
-                    onEdit={() => handleEditProduct(product)}
-                    onDelete={() => deleteProduct(product.id, product.name)}
-                  />
-                ))}
+                {loading ? (
+                  // Show skeleton cards while loading
+                  Array(productsPerPage).fill().map((_, index) => (
+                    <SkeletonProductCard key={`skeleton-${index}`} />
+                  ))
+                ) : (
+                  products.map((product) => (
+                    <ProductCard 
+                      key={product.id || product._id}
+                      product={product} 
+                      viewMode={viewMode}
+                      onEdit={() => handleEditProduct(product)}
+                      onDelete={() => deleteProduct(product.id || product._id, product.name)}
+                      onQuickView={(product) => console.log('Quick view:', product)}
+                      onAddToWishlist={(id) => console.log('Add to wishlist:', id)}
+                    />
+                  ))
+                )}
               </div>
               
-              {totalPages > 1 && (
+              {totalPages > 1 && !loading && (
                 <Pagination 
                   currentPage={currentPage}
                   totalPages={totalPages}
@@ -424,26 +763,27 @@ const App = () => {
               )}
               
               {/* Pagination Info */}
-              <div className="pagination-info">
-                <span>
-                  Page {currentPage} of {totalPages}
-                </span>
-                <div className="page-size-selector">
-                  <label>Items per page:</label>
-                  <select 
-                    value={productsPerPage}
-                    onChange={(e) => {
-                      // This would require backend support
-                      console.log(`Change page size to ${e.target.value}`);
-                    }}
-                    disabled
-                  >
-                    <option value={10}>10</option>
-                    <option value={20}>20</option>
-                    <option value={50}>50</option>
-                  </select>
+              {!loading && totalPages > 1 && (
+                <div className="pagination-info">
+                  <span>
+                    Page {currentPage} of {totalPages}
+                  </span>
+                  <div className="page-size-selector">
+                    <label>Items per page:</label>
+                    <select 
+                      value={productsPerPage}
+                      onChange={(e) => {
+                        console.log(`Change page size to ${e.target.value}`);
+                      }}
+                      disabled
+                    >
+                      <option value={10}>10</option>
+                      <option value={20}>20</option>
+                      <option value={50}>50</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
+              )}
             </>
           )}
         </main>
