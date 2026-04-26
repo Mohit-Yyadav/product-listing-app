@@ -162,5 +162,25 @@
       "storage": []
     },
     "createdAt": "2026-04-24T18:22:09.299Z"
+  },
+  {
+    "id": "fa1a6786-7d4b-491f-969e-9108df6bfeb1",
+    "name": "qqqqqqqqqqqqqqqqqqq",
+    "description": "",
+    "price": 11111111111,
+    "discountPrice": 1111,
+    "brand": "qqqqqqq",
+    "rating": null,
+    "stock": null,
+    "thumbnail": "/uploads/1777204557323.jpg",
+    "images": [
+      "/uploads/1777204557346.jpg",
+      "/uploads/1777204557346.jpg"
+    ],
+    "variants": {
+      "color": [],
+      "storage": []
+    },
+    "createdAt": "2026-04-26T11:55:57.368Z"
   }
 ]
