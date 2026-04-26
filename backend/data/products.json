@@ -29,24 +29,6 @@
     "updatedAt": "2026-04-23T18:45:37.002Z"
   },
   {
-    "id": "7001a296-6312-4cf5-b9f6-ac5c656eb839",
-    "name": "iPhone 15 Pro Max",
-    "description": "Apple iPhone 15 Pro Max (256GB) - Natural Titanium",
-    "price": 159900,
-    "discountPrice": 149900,
-    "category": "electronics",
-    "brand": "Apple",
-    "rating": 4.3,
-    "stock": 50,
-    "thumbnail": null,
-    "images": [],
-    "variants": {
-      "color": [],
-      "storage": []
-    },
-    "createdAt": "2026-04-23T18:44:39.807Z"
-  },
-  {
     "id": "107cce5f-3f6f-4c02-8458-e409675d84fb",
     "name": "wsedrf",
     "price": 1234,
@@ -87,48 +69,15 @@
     "discountPrice": 23,
     "brand": "hello",
     "rating": null,
-    "stock": null,
+    "stock": 12,
     "thumbnail": null,
     "images": [],
     "variants": {
       "color": [],
       "storage": []
     },
-    "createdAt": "2026-04-24T18:06:39.017Z"
-  },
-  {
-    "id": "08d1b6fb-bd2c-4ee4-a2ca-06433c27b11f",
-    "name": "helloo helloo",
-    "price": 999,
-    "discountPrice": 22,
-    "brand": "ewww",
-    "rating": null,
-    "stock": null,
-    "thumbnail": null,
-    "images": [],
-    "variants": {
-      "color": [],
-      "storage": []
-    },
-    "createdAt": "2026-04-24T18:09:26.690Z"
-  },
-  {
-    "id": "b3fcd488-d9bd-4881-b431-9a6586058329",
-    "name": "hellooooooooooooo",
-    "description": "",
-    "price": 999,
-    "discountPrice": 22,
-    "brand": "ewww",
-    "rating": null,
-    "stock": null,
-    "thumbnail": null,
-    "images": [],
-    "variants": {
-      "color": [],
-      "storage": []
-    },
-    "createdAt": "2026-04-24T18:09:26.699Z",
-    "updatedAt": "2026-04-24T18:21:44.348Z"
+    "createdAt": "2026-04-24T18:06:39.017Z",
+    "updatedAt": "2026-04-26T12:09:00.586Z"
   },
   {
     "id": "8ea50e38-33ec-40cd-8cf4-1130d26be41c",
@@ -138,49 +87,13 @@
     "brand": "iphone",
     "rating": null,
     "stock": null,
-    "thumbnail": null,
+    "thumbnail": "/uploads/1777205306062.jpg",
     "images": [],
     "variants": {
       "color": [],
       "storage": []
     },
-    "createdAt": "2026-04-24T18:18:39.698Z"
-  },
-  {
-    "id": "71105bdd-f100-422a-9fd5-df822c5291e2",
-    "name": "ooooooooooooo",
-    "description": "",
-    "price": 25896,
-    "discountPrice": 2,
-    "brand": "jjjjjjj",
-    "rating": null,
-    "stock": null,
-    "thumbnail": null,
-    "images": [],
-    "variants": {
-      "color": [],
-      "storage": []
-    },
-    "createdAt": "2026-04-24T18:22:09.299Z"
-  },
-  {
-    "id": "fa1a6786-7d4b-491f-969e-9108df6bfeb1",
-    "name": "qqqqqqqqqqqqqqqqqqq",
-    "description": "",
-    "price": 11111111111,
-    "discountPrice": 1111,
-    "brand": "qqqqqqq",
-    "rating": null,
-    "stock": null,
-    "thumbnail": "/uploads/1777204557323.jpg",
-    "images": [
-      "/uploads/1777204557346.jpg",
-      "/uploads/1777204557346.jpg"
-    ],
-    "variants": {
-      "color": [],
-      "storage": []
-    },
-    "createdAt": "2026-04-26T11:55:57.368Z"
+    "createdAt": "2026-04-24T18:18:39.698Z",
+    "updatedAt": "2026-04-26T12:08:26.077Z"
   }
 ]
