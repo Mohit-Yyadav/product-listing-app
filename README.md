@@ -1,5 +1,9 @@
 # 🚀 MERN Stack Product Listing App (Fresher Machine Test)
 
+## 🌐 Live Demo
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-green?style=for-the-badge&logo=vercel)](https://product-listing-app-n082.onrender.com/)
+
 ## 📌 Objective
 
 Build a full-stack **Product Listing Application** using:
